@@ -16,9 +16,3 @@ jobs:
       - name: Test with Maven
         run: mvn --batch-mode --update-snapshots package
       
-      - name: Archive test results
-        if: always()  # Цей крок виконується завжди, навіть якщо тести не пройшли
-        uses: actions/upload-artifact@v3
-        with:
-          name: surefire-reports
-          path: target/surefire-reports
